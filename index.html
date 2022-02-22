@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="img/favicon.png">
+	<title>LeapYear</title>
+	<!-- <link rel="stylesheet" href="style.css"> -->
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+		span{
+			margin: 0 10px;
+			display: inline-block;
+			padding: 10px 15px;
+			cursor: pointer;
+			background: tomato;
+			color: #fff;
+		}
+		div{
+			width: 50%;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+
+		}
+		input{
+			padding: 10px 0;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p id="result"></p>
+		<br>
+		<p>Year : <input id="year" type="number"><span onclick="check()">Check</span></p>
+		
+	</div>
+
+	<script>
+		function check(){
+			let n = Number(document.getElementById('year').value);
+			if ((n%4==0 && n%100!=0)|| n%400==0) {
+				document.getElementById('result').innerHTML = n + ' is Leap Year';
+			}else{
+				document.getElementById('result').innerHTML = n + ' is not Leap Year';
+			}
+		}
+	</script>
+</body>
+</html>
